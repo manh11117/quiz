@@ -1,0 +1,25 @@
+
+<h1>Liệt kê các câu hỏi</h1>
+
+<%= link_to 'Câu hỏi mới', new_admin_question_path %>
+<table>
+  <tr>
+    <th>Câu hỏi</th>
+    <th></th>
+  </tr>
+
+  <% @questions.each do |question| %>
+  <tr>
+    <td><%= question.text %></td>
+    <td><%= link_to 'Xem', admin_question_path(question) %></td>
+    <td><%= link_to 'Sửa', edit_admin_question_path(question) %></td>
+    <td><%= link_to 'Xóa', admin_question_path(question),
+              method: :delete,
+              data: { confirm: 'Bạn có chắc không?' } %></td>
+    <td><% question.answers.each do |answer| %><%= answer.text %><% end %></td>
+    <br>
+  </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'Trở lại', admin_root_path %>

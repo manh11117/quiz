@@ -1,0 +1,10 @@
+<p>
+  <strong>Câu trả lời:</strong>
+  <%= answer.text %>
+</p>
+
+<p>
+<%= link_to 'Xóa bình luận', [:admin, answer.question, answer],
+             method: :delete,
+             data: { confirm: 'Bạn có chắc không?' } %>
+</p>

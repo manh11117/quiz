@@ -1,0 +1,9 @@
+<%= form_with(model: [:admin, @question, @question.answers.build ], local: true) do |form| %>
+<p>
+  <%= form.label :'Câu trả lời' %><br>
+  <%= form.text_area :text %>
+</p>
+<p>
+  <%= form.submit :'Tạo câu trả lời' %>
+</p>
+<% end %> 
